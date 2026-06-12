@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: #38bdf820;
+    color: #38bdf8;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #1e2d45; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #38bdf840; }
+
+  /* Light mode surfaces */
+  .bg-surface  { @apply bg-white dark:bg-[#0a1628]; }
+  .bg-surface2 { @apply bg-slate-50 dark:bg-[#0f2040]; }
+  .border-subtle { @apply border-slate-200 dark:border-[#1e2d45]; }
+  .text-muted   { @apply text-slate-500 dark:text-slate-500; }
+  .text-body    { @apply text-slate-600 dark:text-slate-400; }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glow-sky { box-shadow: 0 0 24px #38bdf815; }
+
+  /* Card base — light has white + shadow, dark has navy + border */
+  .card {
+    @apply bg-white dark:bg-[#0a1628]
+           border border-slate-200 dark:border-[#1e2d45]
+           rounded-xl shadow-sm dark:shadow-none;
+  }
+}
